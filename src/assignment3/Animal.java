@@ -34,5 +34,28 @@ package assignment3;
  * @author tim
  */
 public abstract class Animal {
-
+    
+    final private int legs;
+    final private String speakParameter;
+    protected int xCoordinate = 0;
+    protected int yCoordinate = 0;
+    
+    Animal(int legs, String speakParameter) {
+        this.legs = legs;
+        this.speakParameter = speakParameter;
+    }
+    
+    public final int getLegs() {
+        return this.legs;
+    }
+    
+    public final void speak() {
+        System.out.println(speakParameter);
+    }
+    
+    public final void whereAmI() {
+        System.out.println("I am at (" + xCoordinate + "," + yCoordinate + ")");
+    }
+    
+    public abstract void walkTo(int x, int y);
 }
